@@ -20,13 +20,12 @@ const showProducts = (products) => {
       <div>
     <img class="product-image" src=${image}></img>
       </div>
-      <h3>${product.title}</h3>
+      <h4>${product.title}</h4>
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
-      <h5>Total-Rating : ${count}   </h5>
-      <h6>Average-rating: ${rate}</h6>
+      <h5 class="m-3"><i class="fas fa-user"></i> ${count}  <i class="fas fa-star"></i> ${rate}</h5>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" onclick='showDetails(${product.price},${rate})' class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button></div>
+      <button onclick='showDetails(${product.price},${rate})' class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
@@ -35,13 +34,10 @@ const showProducts = (products) => {
 const showDetails = (price, rating) => {
   console.log(price, rating)
 
-  // const x= Array.from(Array(parseInt(rating)).keys()).map((r) =>'<i class="bi bi-star-fill text-warning"></i>' )
-
-  // console.log(x)
   document.getElementById("modal-body").innerHTML = `
      <div class='p-3'>
-      <p>Rating: ${Array.from(Array(parseInt(rating)).keys()).map((r) => '<i class="bi bi-star-fill text-warning"></i>')}</p>
-      <h2>Price: $ ${price}</h2>
+        <p>Rating: ${Array.from(Array(parseInt(rating)).keys()).map(() => "<i class='bi bi-star-fill text-warning'></i>")}</p>
+        <h2>Price: $ ${price}</h2>
      </div>
 `;
 
