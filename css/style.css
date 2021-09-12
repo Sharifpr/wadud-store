@@ -35,6 +35,15 @@ body {
   align-items: center;
   justify-content: center;
 }
+.col-container {
+  display: table;
+  width: 100%;
+}
+.col {
+  display: table-cell;
+  padding: 16px;
+}
+
 .single-product {
   padding: 10px;
   transition: 0.6s;
