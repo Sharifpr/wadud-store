@@ -39,11 +39,8 @@ const showDetails = (price, rating) => {
 
   // console.log(x)
   document.getElementById("modal-body").innerHTML = `
-  
      <div class='p-3'>
-      <p>Rating: ${Array.from(Array(parseInt(rating)).keys()).map(
-    (r) => '<i class="bi bi-star-fill text-warning"></i>'
-  )}</p>
+      <p>Rating: ${Array.from(Array(parseInt(rating)).keys()).map((r) => '<i class="bi bi-star-fill text-warning"></i>')}</p>
       <h2>Price: $ ${price}</h2>
      </div>
 `;
