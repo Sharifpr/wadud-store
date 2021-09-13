@@ -16,16 +16,15 @@ const showProducts = (products) => {
 
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div class="single-product bg-light bg-gradient">
-      <div>
-    <img class="product-image" src=${image}></img>
-      </div>
-      <h4>${product.title}</h4>
+    div.innerHTML = `<div style="height: 430px;" class="single-product bg-light bg-gradient p-4">
+      <img class="product-image" src=${image}></img>
+      <h4>${product.title.slice(0, 30)}</h4>
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
       <h5 class="m-3"><span class="me-3"><i class="fas fa-user"></i> ${count}</span><span><i class="fas fa-star"></i> ${rate}</span></h5>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button onclick='showDetails(${product.price},${rate})' class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button></div>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success rounded-3 me-2">add to cart</button>
+      <button onclick='showDetails(${product.price},${rate})' class="btn btn-danger rounded-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+      </div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
