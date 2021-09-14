@@ -18,11 +18,11 @@ const showProducts = (products) => {
     // div.classList.add("product");
     div.innerHTML = `<div class="single-product">
       <img class="product-image" src=${image}></img>
-      <h4 class="mt-2">${product.title.slice(0, 30)}</h4>
+      <h3 class="mt-2">${product.title.slice(0, 30)}</h3>
       <p>Category: ${product.category}</p>
-      <h5>Rating: <span id="${product.id}"></span><span class="text-danger fw-bold fs-4">(${product.rating.rate})</h5>
+      <h5>Rating: <span id="${product.id}"></span><span class=" fw-bold fs-5">(${product.rating.rate})</h5>
       <h5>Total Reviews: <span class="text-secondary fw-bold fs-4">${product.rating.count}</span></h5>
-      <h2>Price: $ ${product.price}</h2>
+      <h3>Price: $ ${product.price}</h3>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-outline-dark rounded-pill me-2">add to cart</button>
       <button onclick='showDetails(${product.price},${rate})' class="btn btn-outline-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
       </div>
@@ -56,8 +56,6 @@ const dynamicRating = (ratingId, stars) => {
 
 // show details
 const showDetails = (price, rating) => {
-  console.log(price, rating)
-
   document.getElementById("modal-body").innerHTML = `
      <div class='p-3'>
         <p>Rating: ${Array.from(Array(parseInt(rating)).keys()).map(() => "<i class='bi bi-star-fill text-warning'></i>")}</p>
@@ -73,8 +71,6 @@ const addToCart = (id, price) => {
   count = count + 1;
   updatePrice("price", price);
 
-  // console.log(price, typeof price)
-
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
 
@@ -84,7 +80,6 @@ const addToCart = (id, price) => {
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
   const converted = parseFloat(element);
-
   return converted;
 };
 
@@ -124,18 +119,10 @@ const updateTaxAndCharge = () => {
 
 //grandTotal update function
 const updateTotal = () => {
-
-  console.log(
-    getInputValue("price"),
-    getInputValue("delivery-charge"),
-    getInputValue("total-tax")
-  );
-
   const grandTotal =
     getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
 
-  console.log(grandTotal)
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
 loadProducts();
