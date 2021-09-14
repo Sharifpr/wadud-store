@@ -18,13 +18,13 @@ const showProducts = (products) => {
     // div.classList.add("product");
     div.innerHTML = `<div class="single-product">
       <img class="product-image" src=${image}></img>
-      <h4>${product.title.slice(0, 30)}</h4>
+      <h4 class="mt-2">${product.title.slice(0, 30)}</h4>
       <p>Category: ${product.category}</p>
-      <h5>Rating:<span id="${product.id}"></span><span class="text-danger fw-bold fs-4">(${product.rating.rate})</h5>
-      <h5>Rating Count:<span class="text-success fw-bold fs-4">${product.rating.count}</span></h5>
+      <h5>Top-Rating: <span id="${product.id}"></span><span class="text-danger fw-bold fs-4">(${product.rating.rate})</h5>
+      <h5>Total Reviews: <span class="text-success fw-bold fs-4">${product.rating.count}</span></h5>
       <h2>Price: $ ${product.price}</h2>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success rounded-3 me-2">add to cart</button>
-      <button onclick='showDetails(${product.price},${rate})' class="btn btn-danger rounded-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-outline-dark rounded-pill me-2">add to cart</button>
+      <button onclick='showDetails(${product.price},${rate})' class="btn btn-outline-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
       </div>
       `;
     document.getElementById("all-products").appendChild(div);
@@ -38,19 +38,19 @@ const dynamicRating = (ratingId, stars) => {
   let star = Math.round(stars);
   let i = parseInt(ratingId);
   if (star === 1) {
-    document.getElementById(i).innerHTML = '<i class="fas fa-star text-danger"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>';
+    document.getElementById(i).innerHTML = '<i class="fas fa-star text-warning"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>';
   }
   else if (star === 2) {
-    document.getElementById(i).innerHTML = '<i class="fas fa-star text-danger"></i><i class="fas fa-star text-danger"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>';
+    document.getElementById(i).innerHTML = '<i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>';
   }
   else if (star === 3) {
-    document.getElementById(i).innerHTML = '<i class="fas fa-star text-danger"></i><i class="fas fa-star text-danger"></i><i class="fas fa-star text-danger"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>';
+    document.getElementById(i).innerHTML = '<i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>';
   }
   else if (star === 4) {
-    document.getElementById(i).innerHTML = '<i class="fas fa-star text-danger"></i><i class="fas fa-star text-danger"></i><i class="fas fa-star text-danger"></i><i class="fas fa-star text-danger"></i><i class="fas fa-star text-secondary"></i>';
+    document.getElementById(i).innerHTML = '<i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-secondary"></i>';
   }
   else if (star === 5) {
-    document.getElementById(i).innerHTML = '<i class="fas fa-star text-danger"></i><i class="fas fa-star text-danger"></i><i class="fas fa-star text-danger"></i><i class="fas fa-star text-danger"></i><i class="fas fa-star text-danger"></i>';
+    document.getElementById(i).innerHTML = '<i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>';
   }
 }
 

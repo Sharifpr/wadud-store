@@ -21,7 +21,7 @@ body {
   margin: 12px;
   width: 350px;
   height: 450px;
-  background-color: rgba(38, 115, 238, 0.137);
+  background-color: rgb(255, 255, 255);
   border-radius: 8px;
   transition: 0.6s;
 }
@@ -29,7 +29,10 @@ body {
   box-shadow: 4px 4px 7px rgb(60, 61, 82);
   border-radius: 10px;
   border: 1px solid cyan;
+  background: rgb(238,174,202);
+background: radial-gradient(circle, rgb(248, 228, 237) 0%, rgb(226, 239, 255) 100%);
 }
+
 .product-image {
   width: 150px;
   height: 150px;
