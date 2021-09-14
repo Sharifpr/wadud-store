@@ -16,11 +16,17 @@ body {
 
 .single-product {
   padding: 10px;
+  box-shadow: 4px 4px 7px rgb(42, 214, 214);
+  border: 1px solid rgba(218, 223, 210, 0.695);
+  margin: 12px;
+  width: 350px;
+  height: 450px;
+  background-color: rgba(38, 115, 238, 0.137);
+  border-radius: 8px;
   transition: 0.6s;
-  margin: 5px;
 }
 .single-product:hover {
-  box-shadow: 4px 4px 7px gray;
+  box-shadow: 4px 4px 7px rgb(60, 61, 82);
   border-radius: 10px;
   border: 1px solid cyan;
 }
