@@ -20,8 +20,8 @@ const showProducts = (products) => {
       <img class="product-image" src=${image}></img>
       <h4 class="mt-2">${product.title.slice(0, 30)}</h4>
       <p>Category: ${product.category}</p>
-      <h5>Top-Rating: <span id="${product.id}"></span><span class="text-danger fw-bold fs-4">(${product.rating.rate})</h5>
-      <h5>Total Reviews: <span class="text-success fw-bold fs-4">${product.rating.count}</span></h5>
+      <h5>Rating: <span id="${product.id}"></span><span class="text-danger fw-bold fs-4">(${product.rating.rate})</h5>
+      <h5>Total Reviews: <span class="text-secondary fw-bold fs-4">${product.rating.count}</span></h5>
       <h2>Price: $ ${product.price}</h2>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-outline-dark rounded-pill me-2">add to cart</button>
       <button onclick='showDetails(${product.price},${rate})' class="btn btn-outline-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
