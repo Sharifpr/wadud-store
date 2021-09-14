@@ -20,7 +20,7 @@ const showProducts = (products) => {
       <img class="product-image" src=${image}></img>
       <h3 class="mt-2">${product.title.slice(0, 30)}</h3>
       <p>Category: ${product.category}</p>
-      <h5>Rating: <span id="${product.id}"></span><span class="text-muted">(${product.rating.rate})</h5>
+      <h5>Ratings: <span id="${product.id}"></span><span class="text-muted">(${product.rating.rate})</h5>
       <h5>Total Reviews: <span class="">${product.rating.count}</span></h5>
       <h3>Price: $ ${product.price}</h3>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-outline-dark rounded me-2"><i class="fas fa-shopping-cart"></i> Add To Cart</button>
