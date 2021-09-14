@@ -23,7 +23,7 @@ const showProducts = (products) => {
       <h5>Rating: <span id="${product.id}"></span><span class="text-muted">(${product.rating.rate})</h5>
       <h5>Total Reviews: <span class="">${product.rating.count}</span></h5>
       <h3>Price: $ ${product.price}</h3>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-outline-dark rounded me-2"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-outline-dark rounded me-2"><i class="fas fa-shopping-cart"></i> Add To Cart</button>
       <button onclick='showDetails(${product.price},${rate})' class="btn btn-outline-dark rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
       </div>
       `;
